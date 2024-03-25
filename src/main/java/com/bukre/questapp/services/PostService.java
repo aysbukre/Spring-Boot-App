@@ -7,8 +7,6 @@ import com.bukre.questapp.requests.PostCreateRequest;
 import com.bukre.questapp.requests.PostUpdateRequest;
 import com.bukre.questapp.responses.PostResponse;
 import org.springframework.stereotype.Service;
-import com.bukre.questapp.responses.LikeResponse;
-import com.bukre.questapp.responses.PostResponse;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;

@@ -21,11 +21,13 @@ public class UserController {
         this.userService = userService;
     }
 
+    //tüm userları getiren controller
     @GetMapping
     public List<User> getAllUsers() {
         return userService.getAllUsers();
     }
 
+    // yebi bir user create etmek için =newUser
     @PostMapping
     public User createUser(@RequestBody User newUser) {
         return userService.saveOneUser(newUser);
@@ -33,6 +35,7 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public UserResponse getOneUser(@PathVariable Long userId) {
+        //eğer user yoksa exception fırlat TODO : usernotfoundexception
         User user = userService.getOneUserById(userId);
         if (user == null){
             throw new UserNotFoundException();

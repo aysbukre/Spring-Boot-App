@@ -16,6 +16,7 @@ public class  Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
+    //eager hem user hem de post objectini getir
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
