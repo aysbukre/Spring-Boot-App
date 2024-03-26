@@ -27,7 +27,6 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    // yebi bir user create etmek için =newUser
     @PostMapping
     public User createUser(@RequestBody User newUser) {
         return userService.saveOneUser(newUser);

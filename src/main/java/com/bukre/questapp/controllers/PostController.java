@@ -15,14 +15,12 @@ import java.util.Optional;
 public class PostController {
 
 
-    // TODO why we did define private it?
     private PostService postService;
 
     public PostController(PostService postService) {
         this.postService = postService;
     }
 
-    // this getmapping requestin içindeki parametreleri parçalayıp alıyor (@RequestParam)
     @GetMapping
     public List<PostResponse> getAllPosts(@RequestParam Optional<Long> userId) {
         return postService.getAllPosts(userId);
@@ -34,7 +32,6 @@ public class PostController {
         return postService.createOnePost(newPostRequest);
     }
 
-    // this getmapping directly path in kendisindeki değişkeni postId ye atıyor (@PathVariable)
     @GetMapping("/{postId}")
     public PostResponse getOnePost(@PathVariable Long postId) {
         return postService.getOnePostByIdWithLikes(postId);
